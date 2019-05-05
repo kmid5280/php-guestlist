@@ -44,7 +44,7 @@
         try {
             $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $stmt = $conn->prepare("SELECT id, firstname, lastname FROM MyGuests");
+            $stmt = $conn->prepare("SELECT firstname, lastname FROM MyGuests");
             $stmt->execute();
 
             $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
