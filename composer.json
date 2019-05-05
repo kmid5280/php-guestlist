@@ -1,0 +1,6 @@
+{
+    "name": "kyle/php-guestlist",
+    "require": {
+        "vlucas/phpdotenv": "^3.3"
+    }
+}
