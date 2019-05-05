@@ -14,7 +14,7 @@
         <h2>Current Guests</h2>
         <?php
         echo "<table style='border: solid 1px black;'>";
-        echo "<tr><th>Firstname</th><th>Lastname</th></tr>";
+        echo "<tr><th>Id</th><th>Firstname</th><th>Lastname</th><th>Edit</th><th>Delete</th></tr>";
         class TableRows extends RecursiveIteratorIterator {
             function __construct($it) {
                 parent::__construct($it, self::LEAVES_ONLY);
@@ -44,7 +44,7 @@
         try {
             $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $stmt = $conn->prepare("SELECT firstname, lastname FROM MyGuests");
+            $stmt = $conn->prepare("SELECT id, firstname, lastname FROM MyGuests");
             $stmt->execute();
 
             $result = $stmt->setFetchMode(PDO::FETCH_ASSOC);
